@@ -1,2 +1,2 @@
-arb-server
+Arb Server
 ==========
