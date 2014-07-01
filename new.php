@@ -16,4 +16,3 @@ echo 'Connected successfully';
 $mysqli->close;
 
 ?>
-
