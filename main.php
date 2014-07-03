@@ -44,7 +44,8 @@
 				die('Failed to open file');
 			}
 			while($xml->read()) {
-				echo $xml->readInnerXML();
+				if ($xml->name == 'rte')
+					echo $xml->readInnerXML();
 			}
 			$xml->close();
 		}
