@@ -39,15 +39,16 @@
 			}
 			$query->close();*/
 
-			$xml = new XMLReader();
-			if (!$xml->open('data/ArbTrails.xml')) {
+			/*$xml = new XMLReader();
+			if (!$xml->open('data/ArbTrailsNumbered.xml')) {
 				die('Failed to open file');
 			}
 			while($xml->read()) {
 				if ($xml->name == 'rte')
 					echo $xml->readInnerXML();
 			}
-			$xml->close();
+			$xml->close();*/
+			echo readfile('data/ArbTrailsNumbered.xml');
 		}
 	}
 
