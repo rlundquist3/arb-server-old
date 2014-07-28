@@ -27,6 +27,7 @@
 		}
 
 		function trail_points() {
+			echo readfile('data/ArbTrailsNumbered.xml');
 			/*$query = $this->db->prepare('SELECT id, latitude, longitude FROM trail_points');
 			$query->execute();
 			$query->bind_result($id, $lat, $lon);
@@ -48,7 +49,27 @@
 					echo $xml->readInnerXML();
 			}
 			$xml->close();*/
-			echo readfile('data/ArbTrailsNumbered.xml');
+		}
+
+		function arb_items() {
+			$query = $this->db->prepare('SELECT * FROM arb_items');
+			$query->execute();
+			$query->bind_result($id, $name, $image, $description, $lat, $lon, $start, $end, $other);
+
+			while ($query->fetch()) {
+				echo '<item><name>'.$name.'</name><image>'.$image.'</image><description>'.$description.'</description><coords><lat>'.$lat.'</lat><lon>'.$lon.'</lon></coords><dates><start>'.$start.'</start><end>'.$end."</end></dates></item>\n";
+				/*$item = new SimpleXMLElement('item');
+				$nameData = $item->addChild('name', $name);
+				$imageData = $item->addChild('image', $image);
+				$descData = $item->addChild('description', $description);
+				$latData = $item->addChild('lat', $lat);
+				$lonData = $item->addChild('lon', $lon);
+				$startData = $item->addChild('start', $start);
+				$endData = $item->addChild('end', $end);
+				echo $item->asXML();*/
+			}
+
+			$query->close();
 		}
 	}
 
@@ -56,7 +77,9 @@
 
 	if ($_GET['type'] === 'trail_points')
 		$api->trail_points();
-	else if ($_GET['type'] === 'test')
+	else if ($_GET['type'] == 'arb_items')
+		$api->arb_items();
+	else if ($_GET['type'] == 'test')
 		$api->test();
 
 ?>
