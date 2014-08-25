@@ -12,11 +12,11 @@ This will be moved to a server at the College.
 ---------
 
 This address serves as the main source for acquiring data.
-'''
+```
 ?type=trail_points
-'''
+```
 returns the XML with the GPS coordinates for all trail data formatted as:
-'''
+```
 <trails>
 <rte>
 		<rtept lat=”[latitude]” lon=”[longitude]” trail=”1”>
@@ -30,15 +30,15 @@ returns the XML with the GPS coordinates for all trail data formatted as:
 	</rte>
 	…
 </trails>
-'''
+```
 
-'''
+```
 ?type=arb_items
-'''
+```
 queries the database for currently relevant points of interest in the Arb and returns their information in XML formatted as:
-'''
+```
 <item><name>[name]</name><image>[image_name]</image><description>[description]</description><coords><lat>[latitude]</lat><lon>[longitude]</lon></coords><dates><start>[start_month]</start><end>[end_month]</end></dates></item>
-'''
+```
 
 
 /mail.php
