@@ -1,6 +1,9 @@
 <?php
+/*
+This file allows users of the Arb app to contact staff with comments, questions, maintenance notifications, etc. Sending a POST request with the parameters email, subject, and message will send the Arboretum email address an email and send a confirmation to the submitted email address.
+*/
 
-define('CONTACT_ADDRESS', 'rlundquist3@gmail.com');
+define('CONTACT_ADDRESS', 'arboretum@kzoo.edu');
 
 echo "Sending message:\n";
 $email = $_POST['email'];
