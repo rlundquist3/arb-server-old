@@ -37,7 +37,19 @@ returns the XML with the GPS coordinates for all trail data formatted as:
 ```
 queries the database for currently relevant points of interest in the Arb and returns their information in XML formatted as:
 ```
-<item><name>[name]</name><image>[image_name]</image><description>[description]</description><coords><lat>[latitude]</lat><lon>[longitude]</lon></coords><dates><start>[start_month]</start><end>[end_month]</end></dates></item>
+<item>
+  <name>[name]</name>
+  <image>[image_name]</image>
+  <description>[description]</description>
+  <coords>
+    <lat>[latitude]</lat>
+    <lon>[longitude]</lon>
+  </coords>
+  <dates>
+    <start>[start_month]</start>
+    <end>[end_month]</end>
+  </dates>
+</item>
 ```
 
 
